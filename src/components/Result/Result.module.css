@@ -1,0 +1,9 @@
+.div {
+  display: inline-block;
+  margin-left: 50px;
+  padding: 8px 20px;
+
+  background-color: azure;
+  border: none;
+  border-radius: 6px;
+}
