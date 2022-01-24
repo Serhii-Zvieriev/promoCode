@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { notePromocode, calcBonus } from "../../redux/promocode-action";
-import { calculateBonus } from "../../utils/fn";
+import {
+  notePromocode,
+  calcBonus,
+  bgColorResult,
+} from "../../redux/promocode-action";
+import { calculateBonus, getRandomColor } from "../../utils/fn";
 import style from "./Form.module.css";
 
 export function Form() {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
+
+  let resBgColor = "";
 
   const handleChangeInput = ({ target }) => {
     setValue(target.value);
@@ -23,6 +29,8 @@ export function Form() {
 
     dispatch(calcBonus(calculateBonus(value)));
     resetForm();
+    // resBgColor = getRandomColor();
+    dispatch(bgColorResult(getRandomColor()));
   };
 
   return (

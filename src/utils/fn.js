@@ -16,7 +16,7 @@ function parseInputValueToNumber(value) {
   }
 
   if (arrNumbers.length !== 8) {
-    // alert("Promocode must be 8 characters long");
+    alert("Promocode must be 8 characters long");
     return;
   }
 
@@ -80,4 +80,17 @@ export function calculateBonus(value) {
   } else {
     return is100(res);
   }
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+}
+
+export function getRandomColor() {
+  let red = getRandomInt(0, 256);
+  let green = getRandomInt(0, 256);
+  let blue = getRandomInt(0, 256);
+  return `rgb(${red},${green}, ${blue})`;
 }
